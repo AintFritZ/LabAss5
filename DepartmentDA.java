@@ -21,14 +21,14 @@ public class DepartmentDA {
 
             dep.setDepCode(RawFile[0].trim());
             dep.setDepName(RawFile[1].trim());
-            readDeadEmp(dep);
-            report.append(printDepartment(dep));
+            readEmp(dep);
+            report.append(printDep(dep));
         }
 
         return report.toString();
     }
 
-    private void readDeadEmp(Department department) throws FileNotFoundException {
+    private void readEmp(Department department) throws FileNotFoundException {
         Scanner depEmpFile = new Scanner(new FileReader("/workspaces/LabAss5/depTemp.csv"));
         HashMap<String, Employee> employeeMap = new HashMap<>();
         double totalSalary = 0;
@@ -59,7 +59,7 @@ public class DepartmentDA {
         department.setDeptTotalSalary(totalSalary);
     }
 
-    private String printDepartment(Department department) {
+    private String printDep(Department department) {
         DecimalFormat df = new DecimalFormat("#,###.00");
         StringBuilder departmentString = new StringBuilder();
     
