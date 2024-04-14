@@ -71,8 +71,7 @@ public class DepartmentDA {
     
         for (Map.Entry<String, Employee> entryMap : department.getEmployeeMap().entrySet()) {
             Employee employee = entryMap.getValue();
-            departmentString.append(String.format("%-10s %-20s %10s\n", entryMap.getKey(),
-                    employee.getLastName() + ", " + employee.getFirstName(), df.format(employee.getSalary())));
+            departmentString.append(String.format("%-10s %-20s %10s\n", entryMap.getKey(), employee.getLastName() + ", " + employee.getFirstName(), df.format(employee.getSalary())));
         }
         departmentString.append("\n");
     
